@@ -1,10 +1,20 @@
 {% render 'partials/head.liquid', title: 'Squad page' %}
 
-<h2>Students</h2>
-<ul>
+
+
+
   {% for person in persons %}
-    <li><a href="/student/{{ person.id }}">{{ person.name }}</a></li>
+    <section class="cards">
+          <div class="colour-card" style="background-color:{{ person.fav_color}}" data-color="{{ person.fav_color }}"></div>
+           <a href="/student/{{ person.id }}">{{ person.name }}</a>
+            <p>{{ person.github_handle }}
+              <br>{{ person.fav_color }}
+              <br>{{ person.fav_season }}
+              <br>{{ person.team }}
+            </p>
+       </section>
   {% endfor %}
+
 </ul>
 
 {% render 'partials/foot.liquid', squads: squads %}
