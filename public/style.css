@@ -1,0 +1,39 @@
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    font-family: 'Helvetica Neue';
+    
+}
+
+title{
+    width: 100%;
+}
+.cards{
+    
+    background-color: white;
+    height: auto;
+    width: 223px;
+    margin: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3)
+}
+
+.colour-card{
+    background-color:gainsboro;
+    height: 210px;
+    width: auto;
+}
+
+
+a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+}
+
+h1{
+    width: 100%;
+}
