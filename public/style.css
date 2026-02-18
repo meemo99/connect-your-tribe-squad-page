@@ -4,15 +4,14 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: start;
-    font-family: 'Helvetica Neue';
-    
+    font-family: 'Helvetica Neue';   
 }
 
 title{
     width: 100%;
 }
+
 .cards{
-    
     background-color: white;
     height: auto;
     width: 223px;
@@ -24,10 +23,12 @@ title{
     background-color:gainsboro;
     height: 210px;
     width: auto;
+    margin-bottom: 10px;
 }
 
 
 a{
+    margin-left: 6px;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bolder;
@@ -36,4 +37,8 @@ a{
 
 h1{
     width: 100%;
+}
+
+p{
+    margin: 6px;
 }
