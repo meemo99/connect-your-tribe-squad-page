@@ -124,3 +124,20 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+
+
+let messages = []
+
+app.get('/berichten', async function (request, response){
+  response.render('messages.liquid', {
+    messages: messages
+  })
+})
+
+app.post('/berichten', async function (request, response) {
+  messages.push(request.body.message)
+  // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
+  // Er is nog geen afhandeling van POST, redirect naar GET op /
+  response.redirect(303, '/berichten')
+})
