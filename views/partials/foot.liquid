@@ -7,6 +7,12 @@
         card.addEventListener('mouseenter', () => document.body.style.backgroundColor = color);
         card.addEventListener('mouseleave', () => document.body.style.backgroundColor = '');
       });
+
+      document.querySelectorAll('a').forEach(link => {
+        if (link.href === window.location.href) {
+          link.classList.add('active');
+        }
+      });
 </script>
   </body>
 </html>

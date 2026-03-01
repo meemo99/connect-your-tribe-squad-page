@@ -36,6 +36,12 @@ h1 {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
+a.active {
+  background-color: black;
+  color: white;
+  padding: 4px 10px;
+}
+
 .pantone-card {
     display: flex;
     flex-direction: column;
