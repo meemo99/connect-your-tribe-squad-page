@@ -8,8 +8,13 @@
   </nav>
 
   {% for person in persons %}
-    <section class="cards">
-          <div class="colour-card" style="background-color:{{ person.fav_color}}" data-color="{{ person.fav_color }}"></div>
+    <section class="pantone-card">
+      <div class="color-card">
+          <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}" alt="" class="personMugshot">
+          <div class="swatch-color" style="background-color:{{ person.fav_color}}" data-color="{{ person.fav_color }}">
+          </div>
+          
+        </div>
            <a href="/student/{{ person.id }}">{{ person.name }}</a>
             <p>{{ person.github_handle }}
               <br>{{ person.fav_color }}
