@@ -1,11 +1,12 @@
 
     <footer>
-      <h2>Squads</h2>
-      <ul>
-        {% for squad in squads %}
-          <li>Squad {{ squad.name }}</li>
-        {% endfor %}
-      </ul>
     </footer>
+    <script>
+      document.querySelectorAll('.pantone-card').forEach(card => {
+        const color = card.querySelector('.swatch-color').dataset.color;
+        card.addEventListener('mouseenter', () => document.body.style.backgroundColor = color);
+        card.addEventListener('mouseleave', () => document.body.style.backgroundColor = '');
+      });
+</script>
   </body>
 </html>
