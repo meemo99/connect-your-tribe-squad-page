@@ -64,16 +64,21 @@ app.get('/', async function (request, response) {
     // Combineer meerdere filters
     'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
     // Filter eventueel alleen op een bepaalde squad
-    'filter[squads][squad_id][name]': '1I',
+    // 'filter[squads][squad_id][name]': '1I',
     // 'filter[squads][squad_id][name]': '1J',
     'filter[squads][squad_id][cohort]': '2526'
 
   }
+
+  // filter for each squad
+  if (request.query.filter) {
+    params["filter[squads][squad_id][name]"] = request.query.filter;
+  }
+
   const personResponse = await fetch('https://fdnd.directus.app/items/person/?' + new URLSearchParams(params))
 
   // En haal daarvan de JSON op
   const personResponseJSON = await personResponse.json()
-
 
 
   // personResponseJSON bevat gegevens van alle personen uit alle squads van dit jaar
@@ -93,6 +98,7 @@ app.get('/team/:team_name', async function (request, response) {
   const personResponseJSON = await personResponse.json()
   response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
 })
+
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 app.post('/', async function (request, response) {
