@@ -1,7 +1,11 @@
 {% render 'partials/head.liquid', title: 'Squad page' %}
 
-
-
+  <nav class= filter-menu>
+    <a class="btn">Team</a>
+    <a class="btn" href="?filter=1I">Squad 1I</a>
+    <a class="btn" href="?filter=1J">Squad 1J</a>
+    <a class="btn">Seizoen</a>
+  </nav>
 
   {% for person in persons %}
     <section class="cards">
